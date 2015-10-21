@@ -107,6 +107,7 @@ let g:DoxygenToolkit_authorName="Anton Romanov"
 let g:DoxygenToolkit_licenseTag="AS IS"
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_confirm_extra_conf = 0
 "let g:ycm_autoclose_preview_window_after_insertion = 0
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 if filereadable("/usr/local/bin/python2.7")
