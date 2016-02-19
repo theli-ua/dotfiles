@@ -21,6 +21,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'vim-scripts/Vimball'
 Bundle 'derekwyatt/vim-fswitch'
 Bundle 'bling/vim-airline'
+Bundle 'vim-scripts/groovyindent'
 
 
 filetype off
