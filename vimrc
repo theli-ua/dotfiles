@@ -22,6 +22,7 @@ Bundle 'vim-scripts/Vimball'
 Bundle 'derekwyatt/vim-fswitch'
 Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/groovyindent'
+Bundle 'heavenshell/vim-pydocstring'
 
 
 filetype off
@@ -107,13 +108,17 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 let g:DoxygenToolkit_authorName="Anton Romanov" 
 let g:DoxygenToolkit_licenseTag="AS IS"
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_confirm_extra_conf = 0
-"let g:ycm_autoclose_preview_window_after_insertion = 0
+"let g:ycm_server_log_level = "debug"
+"let g:ycm_server_keep_logfiles = 1
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
-if filereadable("/usr/local/bin/python2.7")
-	let g:ycm_path_to_python_interpreter = '/usr/local/bin/python2.7'
-endif
 set errorformat^=%-G%f:%l:\ warning:%m
 
 let g:nerdtree_tabs_open_on_gui_startup = 0
+set modeline
+set modelines=5
+let g:EclimCompletionMethod = 'omnifunc'
+if filereadable("~/.vimrc.local")
+    source ~/.vimrc.local
+endif
