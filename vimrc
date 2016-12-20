@@ -1,7 +1,3 @@
-if filereadable("~/.vimrc.local")
-    source ~/.vimrc.local
-endif
-
 " Of course
 set nocompatible
 
@@ -12,10 +8,10 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'kien/ctrlp.vim'
+uundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
-Bundle 'vim-scripts/pyflakes.vim'
+Bundle 'kevinw/pyflakes-vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -28,6 +24,11 @@ Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/groovyindent'
 Bundle 'heavenshell/vim-pydocstring'
 Bundle 'vim-ruby/vim-ruby'
+Bundle "chikamichi/mediawiki.vim"
+Plugin 'dyng/ctrlsf.vim'
+Bundle "lepture/vim-jinja"
+"Plugin 'rking/ag.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 
 filetype off
@@ -129,7 +130,7 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-
-if filereadable("~/.vimrc.local")
+let g:EclimCompletionMethod = 'omnifunc'
+if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
 endif
