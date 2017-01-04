@@ -11,7 +11,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kevinw/pyflakes-vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -24,13 +23,13 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/groovyindent'
 Plugin 'heavenshell/vim-pydocstring'
 Plugin 'vim-ruby/vim-ruby'
-Plugin "chikamichi/mediawiki.vim"
+Plugin 'chikamichi/mediawiki.vim'
 Plugin 'dyng/ctrlsf.vim'
-Plugin "lepture/vim-jinja"
+Plugin 'lepture/vim-jinja'
 "Plugin 'rking/ag.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'yuttie/comfortable-motion.vim'
-
+Plugin 'vim-syntastic/syntastic'
 
 filetype off
 syntax on
@@ -107,8 +106,18 @@ nnoremap <F11> :RainbowParenthesesToggle<cr>
 nnoremap <F12> :NERDTreeTabsToggle<cr>
 nnoremap <F10> :call SessionManagerToggle()<cr><cr>
 
-:let g:session_autoload = 'yes'
-:let g:session_autosave = 'yes'
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['flake8', 'pylint']
+
+"let g:session_autosave = 'yes'
 
 nnoremap <silent> <F8> :TlistToggle<CR>
 
