@@ -12,6 +12,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'xolox/vim-misc'
@@ -29,7 +30,8 @@ Plugin 'lepture/vim-jinja'
 "Plugin 'rking/ag.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'yuttie/comfortable-motion.vim'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 
 filetype off
 syntax on
@@ -115,9 +117,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8', 'pylint']
+let g:syntastic_python_checkers = ['flake8', 'pylint', 'pyflakes']
 
-"let g:session_autosave = 'yes'
+let g:session_autosave = 'yes'
 
 nnoremap <silent> <F8> :TlistToggle<CR>
 
@@ -125,7 +127,7 @@ let g:DoxygenToolkit_authorName="Anton Romanov"
 let g:DoxygenToolkit_licenseTag="AS IS"
 "let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 "let g:ycm_autoclose_preview_window_after_completion = 0
-"let g:ycm_confirm_extra_conf = 0
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_server_log_level = "debug"
 let g:ycm_server_use_vim_stdout = 0
 let g:ycm_server_keep_logfiles = 1
@@ -136,11 +138,11 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 set modeline
 set modelines=5
 "let g:EclimCompletionMethod = 'omnifunc'
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-let g:EclimCompletionMethod = 'omnifunc'
+"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"let g:EclimCompletionMethod = 'omnifunc'
 if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
 endif
