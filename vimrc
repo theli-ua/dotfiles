@@ -32,6 +32,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'yuttie/comfortable-motion.vim'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
+Plugin 'petRUShka/vim-opencl'
 
 filetype off
 syntax on
@@ -131,6 +132,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_server_log_level = "debug"
 let g:ycm_server_use_vim_stdout = 0
 let g:ycm_server_keep_logfiles = 1
+let g:ycm_python_binary_path = "python3.6"
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 set errorformat^=%-G%f:%l:\ warning:%m
 
@@ -146,3 +148,4 @@ set modelines=5
 if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
 endif
+set encoding=utf-8
