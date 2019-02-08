@@ -136,6 +136,11 @@ let g:ycm_python_binary_path = "python3.6"
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 set errorformat^=%-G%f:%l:\ warning:%m
 
+set list
+set listchars=tab:>-
+
+let g:syntastic_java_checkers = []
+
 let g:nerdtree_tabs_open_on_gui_startup = 0
 set modeline
 set modelines=5
