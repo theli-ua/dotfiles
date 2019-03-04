@@ -33,6 +33,7 @@ Plugin 'yuttie/comfortable-motion.vim'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
 Plugin 'petRUShka/vim-opencl'
+Plugin 'cespare/vim-toml'
 
 filetype off
 syntax on
@@ -111,14 +112,14 @@ nnoremap <F10> :call SessionManagerToggle()<cr><cr>
 
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8', 'pylint', 'pyflakes']
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_python_checkers = ['flake8', 'pylint', 'pyflakes']
 
 let g:session_autosave = 'yes'
 
