@@ -30,10 +30,10 @@ Plugin 'lepture/vim-jinja'
 "Plugin 'rking/ag.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'yuttie/comfortable-motion.vim'
-"Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
 Plugin 'petRUShka/vim-opencl'
 Plugin 'cespare/vim-toml'
+Plugin 'Raimondi/delimitMate'
 
 filetype off
 syntax on
@@ -111,15 +111,10 @@ nnoremap <F12> :NERDTreeTabsToggle<cr>
 nnoremap <F10> :call SessionManagerToggle()<cr><cr>
 
 
-" Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_python_checkers = ['flake8', 'pylint', 'pyflakes']
+" ALE
+let b:ale_linters = {'java': []}
+let g:ale_linters_explicit = 1
+
 
 let g:session_autosave = 'yes'
 
@@ -127,6 +122,8 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 
 let g:DoxygenToolkit_authorName="Anton Romanov" 
 let g:DoxygenToolkit_licenseTag="AS IS"
+
+"YCM
 "let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 "let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_confirm_extra_conf = 0
