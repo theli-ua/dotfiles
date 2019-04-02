@@ -131,6 +131,7 @@ let g:ycm_server_log_level = "debug"
 let g:ycm_server_use_vim_stdout = 0
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_python_binary_path = "python3.6"
+cnoreabbrev ycm YcmCompleter
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 set errorformat^=%-G%f:%l:\ warning:%m
 
