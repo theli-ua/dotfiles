@@ -34,6 +34,9 @@ Plugin 'w0rp/ale'
 Plugin 'petRUShka/vim-opencl'
 Plugin 'cespare/vim-toml'
 Plugin 'Raimondi/delimitMate'
+Plugin 'sirver/UltiSnips'
+" Actual snippets
+Plugin 'honza/vim-snippets'
 
 filetype off
 syntax on
@@ -54,7 +57,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-" set encoding=utf-8
+set encoding=utf-8
 set scrolloff=3
 set autoindent
 set showmode
@@ -106,50 +109,60 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <F11> :RainbowParenthesesToggle<cr>
-"nnoremap <F12> :NERDTreeToggle<cr>
 nnoremap <F12> :NERDTreeTabsToggle<cr>
-nnoremap <F10> :call SessionManagerToggle()<cr><cr>
 
 
 " ALE
+" Disable for java
 let b:ale_linters = {'java': []}
 let g:ale_linters_explicit = 1
 
-
+" Session managemengt
 let g:session_autosave = 'yes'
 
+" Taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
 
 let g:DoxygenToolkit_authorName="Anton Romanov" 
 let g:DoxygenToolkit_licenseTag="AS IS"
 
-"YCM
-"let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-"let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_server_log_level = "debug"
-let g:ycm_server_use_vim_stdout = 0
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_python_binary_path = "python3.6"
+" YCM
 cnoreabbrev ycm YcmCompleter
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <C-[> :YcmCompleter GoToReferences<CR>
+"let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+"let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_server_log_level = "info"
+let g:ycm_server_use_vim_stdout = 0
+let g:ycm_server_keep_logfiles = 0
+let g:ycm_python_binary_path = "python3.6"
+let g:ycm_always_populate_location_list = 1
+let g:ycm_use_ultisnips_completer = 1
+let g:ycm_goto_buffer_command = 'new-or-existing-tab'
+let g:ycm_use_clangd = 1
+let g:ycm_key_list_select_completion = ['<c-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-k>', '<Up>']
+
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
 set errorformat^=%-G%f:%l:\ warning:%m
 
 set list
 set listchars=tab:>-
 
-let g:syntastic_java_checkers = []
-
 let g:nerdtree_tabs_open_on_gui_startup = 0
+
+" Enable modeline
 set modeline
 set modelines=5
-"let g:EclimCompletionMethod = 'omnifunc'
-"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"let g:EclimCompletionMethod = 'omnifunc'
+
 if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
 endif
-set encoding=utf-8
