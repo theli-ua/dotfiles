@@ -134,7 +134,7 @@ nnoremap <C-[> :YcmCompleter GoToReferences<CR>
 "let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_server_log_level = "info"
+let g:ycm_server_log_level = "debug"
 let g:ycm_server_use_vim_stdout = 0
 let g:ycm_server_keep_logfiles = 0
 let g:ycm_python_binary_path = "python3.6"
@@ -144,6 +144,8 @@ let g:ycm_goto_buffer_command = 'new-or-existing-tab'
 let g:ycm_use_clangd = 1
 let g:ycm_key_list_select_completion = ['<c-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-k>', '<Up>']
+" Trigger semantic completion after 2 characters
+let g:ycm_semantic_triggers = {'python':'re!\w{2}','java':'re!\w{2}','c':'re!\w{2}','rust':'re!\w{2}'}
 
 
 " UltiSnips
