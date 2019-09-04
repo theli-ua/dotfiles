@@ -3,10 +3,10 @@ set nocompatible
 
 " Required Vundle setup
 filetype off
-set runtimepath+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -37,6 +37,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'sirver/UltiSnips'
 " Actual snippets
 Plugin 'honza/vim-snippets'
+
+call vundle#end()            " required
 
 filetype off
 syntax on
