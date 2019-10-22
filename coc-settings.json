@@ -1,0 +1,7 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+      "rust"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
