@@ -130,8 +130,8 @@ let g:DoxygenToolkit_licenseTag="AS IS"
 
 " YCM
 cnoreabbrev ycm YcmCompleter
-nnoremap <C-,> :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <C-.> :YcmCompleter GoToReferences<CR>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 "let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 "let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -145,9 +145,22 @@ let g:ycm_use_ultisnips_completer = 1
 let g:ycm_goto_buffer_command = 'new-or-existing-tab'
 let g:ycm_use_clangd = 1
 let g:ycm_key_list_select_completion = ['<c-j>', '<Down>']
+let g:ycm_key_list_stop_completion = ['<C-y>']
+let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_key_list_previous_completion = ['<c-k>', '<Up>']
 " Trigger semantic completion after 2 characters
 let g:ycm_semantic_triggers = {'python':'re!\w{2}','java':'re!\w{2}','c':'re!\w{2}','rust':'re!\w{2}'}
+autocmd BufWritePost *.rs silent YcmCompleter Format
+let g:ycm_language_server = 
+  \ [ 
+  \   {
+  \     'name': 'rust',
+  \     'cmdline': [ 'ra_lsp_server' ],
+  \     'filetypes': [ 'rust' ],
+  \     'project_root_files': [ 'Cargo.toml' ]
+  \   }
+  \ ]
+
 
 
 " UltiSnips
