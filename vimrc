@@ -37,6 +37,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'sirver/UltiSnips'
 " Actual snippets
 Plugin 'honza/vim-snippets'
+Plugin 'jnurmine/Zenburn'
 
 call vundle#end()            " required
 
