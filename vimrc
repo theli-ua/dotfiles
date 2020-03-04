@@ -34,6 +34,7 @@ Plugin 'w0rp/ale'
 Plugin 'petRUShka/vim-opencl'
 Plugin 'cespare/vim-toml'
 Plugin 'Raimondi/delimitMate'
+Plugin 'jremmen/vim-ripgrep'
 Plugin 'sirver/UltiSnips'
 " Actual snippets
 Plugin 'honza/vim-snippets'
@@ -177,6 +178,8 @@ set listchars=tab:>-
 
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
+set switchbuf+=usetab,newtab
+
 " Enable modeline
 set modeline
 set modelines=5
@@ -184,3 +187,4 @@ set modelines=5
 if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
 endif
+
