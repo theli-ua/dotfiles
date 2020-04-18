@@ -164,6 +164,22 @@ let g:ycm_language_server =
   \ ]
 
 
+let s:ycm_hover_popup = -1
+function s:Hover()
+  let response = youcompleteme#GetCommandResponse( 'GetDoc' )
+  if response == ''
+    return
+  endif
+
+  call popup_hide( s:ycm_hover_popup )
+  let s:ycm_hover_popup = popup_atcursor( balloon_split( response ), {} )
+endfunction
+
+" CursorHold triggers in normal mode after a delay
+autocmd CursorHold * call s:Hover()
+" Or, if you prefer, a mapping:
+"nnoremap <leader>D :call <SID>Hover()<CR>
+
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
