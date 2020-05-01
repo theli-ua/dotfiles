@@ -153,33 +153,6 @@ let g:ycm_key_list_previous_completion = ['<c-k>', '<Up>']
 " Trigger semantic completion after 2 characters
 let g:ycm_semantic_triggers = {'python':'re!\w{2}','java':'re!\w{2}','c':'re!\w{2}','rust':'re!\w{2}'}
 autocmd BufWritePost *.rs silent YcmCompleter Format
-let g:ycm_language_server = 
-  \ [ 
-  \   {
-  \     'name': 'rust',
-  \     'cmdline': [ 'ra_lsp_server' ],
-  \     'filetypes': [ 'rust' ],
-  \     'project_root_files': [ 'Cargo.toml' ]
-  \   }
-  \ ]
-
-
-let s:ycm_hover_popup = -1
-function s:Hover()
-  let response = youcompleteme#GetCommandResponse( 'GetDoc' )
-  if response == ''
-    return
-  endif
-
-  call popup_hide( s:ycm_hover_popup )
-  let s:ycm_hover_popup = popup_atcursor( balloon_split( response ), {} )
-endfunction
-
-" CursorHold triggers in normal mode after a delay
-autocmd CursorHold * call s:Hover()
-" Or, if you prefer, a mapping:
-"nnoremap <leader>D :call <SID>Hover()<CR>
-
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
