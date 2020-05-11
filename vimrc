@@ -75,7 +75,6 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set relativenumber
 set undofile
 let mapleader = ","
 nnoremap / /\v
@@ -93,6 +92,9 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
+" hybrid line numbers
+set number relativenumber
+set nu rnu
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
