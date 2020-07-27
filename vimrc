@@ -39,6 +39,7 @@ Plugin 'sirver/UltiSnips'
 " Actual snippets
 Plugin 'honza/vim-snippets'
 Plugin 'jnurmine/Zenburn'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()            " required
 
@@ -154,7 +155,19 @@ let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_key_list_previous_completion = ['<c-k>', '<Up>']
 " Trigger semantic completion after 2 characters
 let g:ycm_semantic_triggers = {'python':'re!\w{2}','java':'re!\w{2}','c':'re!\w{2}','rust':'re!\w{2}'}
-autocmd BufWritePost *.rs silent YcmCompleter Format
+function FormatAndBack()
+    let save_cursor = getcurpos()
+    silent YcmCompleter Format
+    call setpos('.', save_cursor)
+endfunction
+autocmd BufWritePre *.rs call FormatAndBack()
+let g:ycm_language_server = [
+  \   { 'name': 'rust',
+  \     'filetypes': [ 'rust' ],
+  \     'cmdline': [ '/home/romanton/workplace/rust-analyzer/target/release/rust-analyzer' ],
+  \     'project_root_files': [ 'Cargo.toml' ],
+  \   },
+  \ ]
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
