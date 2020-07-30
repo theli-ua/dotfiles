@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'puremourning/vimspector'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -20,13 +21,14 @@ Plugin 'xolox/vim-session'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/Vimball'
 Plugin 'derekwyatt/vim-fswitch'
-Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/groovyindent'
 Plugin 'heavenshell/vim-pydocstring'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'chikamichi/mediawiki.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'lepture/vim-jinja'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'rking/ag.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'yuttie/comfortable-motion.vim'
@@ -40,6 +42,7 @@ Plugin 'sirver/UltiSnips'
 Plugin 'honza/vim-snippets'
 Plugin 'jnurmine/Zenburn'
 Plugin 'rust-lang/rust.vim'
+Plugin 'jeetsukumaran/vim-buffergator'
 
 call vundle#end()            " required
 
@@ -168,6 +171,27 @@ let g:ycm_language_server = [
   \     'project_root_files': [ 'Cargo.toml' ],
   \   },
   \ ]
+
+" Airline
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+" This allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
+
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
