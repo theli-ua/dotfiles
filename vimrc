@@ -140,6 +140,7 @@ let g:DoxygenToolkit_licenseTag="AS IS"
 cnoreabbrev ycm YcmCompleter
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+set completeopt+=popup
 "let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 "let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -150,14 +151,14 @@ let g:ycm_server_keep_logfiles = 0
 let g:ycm_python_binary_path = "python3.6"
 let g:ycm_always_populate_location_list = 1
 let g:ycm_use_ultisnips_completer = 1
-let g:ycm_goto_buffer_command = 'new-or-existing-tab'
+"let g:ycm_goto_buffer_command = 'new-or-existing-tab'
 let g:ycm_use_clangd = 1
 let g:ycm_key_list_select_completion = ['<c-j>', '<Down>']
 let g:ycm_key_list_stop_completion = ['<C-y>']
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_key_list_previous_completion = ['<c-k>', '<Up>']
 " Trigger semantic completion after 2 characters
-let g:ycm_semantic_triggers = {'python':'re!\w{2}','java':'re!\w{2}','c':'re!\w{2}','rust':'re!\w{2}'}
+"let g:ycm_semantic_triggers = {'python':'re!\w{2}','java':'re!\w{2}','c':'re!\w{2}','rust':'re!\w{2}'}
 function FormatAndBack()
     let save_cursor = getcurpos()
     silent YcmCompleter Format
@@ -206,7 +207,7 @@ set listchars=tab:>-
 
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
-set switchbuf+=usetab,newtab
+"set switchbuf+=usetab,newtab
 
 " Enable modeline
 set modeline
