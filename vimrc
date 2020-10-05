@@ -13,6 +13,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -176,6 +177,8 @@ let g:ycm_language_server = [
 " Airline
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
+" show full tag hierarchy"
+let g:airline#extensions#tagbar#flags = 'f'
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 " This allows buffers to be hidden if you've modified a buffer.
