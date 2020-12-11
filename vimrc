@@ -12,7 +12,6 @@ Plugin 'puremourning/vimspector'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/taglist.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-fugitive'
@@ -131,8 +130,8 @@ let g:ale_linters_explicit = 1
 " Session managemengt
 let g:session_autosave = 'yes'
 
-" Taglist
-nnoremap <silent> <F8> :TlistToggle<CR>
+" Tagbar
+nnoremap <silent> <F8> :TagbarToggle<CR>
 
 let g:DoxygenToolkit_authorName="Anton Romanov" 
 let g:DoxygenToolkit_licenseTag="AS IS"
@@ -143,10 +142,10 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 set completeopt+=popup
 "let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-"let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_server_log_level = "debug"
+let g:ycm_server_log_level = "info"
 let g:ycm_server_use_vim_stdout = 0
 let g:ycm_server_keep_logfiles = 0
 let g:ycm_python_binary_path = "python3.6"
@@ -166,21 +165,15 @@ function FormatAndBack()
     call setpos('.', save_cursor)
 endfunction
 autocmd BufWritePre *.rs call FormatAndBack()
-let g:ycm_language_server = [
-  \   { 'name': 'rust',
-  \     'filetypes': [ 'rust' ],
-  \     'cmdline': [ '/home/romanton/workplace/rust-analyzer/target/release/rust-analyzer' ],
-  \     'project_root_files': [ 'Cargo.toml' ],
-  \   },
-  \ ]
-
 " Airline
+let g:airline_powerline_fonts = 1
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " show full tag hierarchy"
 let g:airline#extensions#tagbar#flags = 'f'
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_theme='zenburn'
 " This allows buffers to be hidden if you've modified a buffer.
 " This is almost a must if you wish to use buffers in this way.
 set hidden
@@ -196,6 +189,8 @@ nmap <leader>h :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 
+
+nmap <leader>yf :YcmCompleter FixIt<CR>
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
