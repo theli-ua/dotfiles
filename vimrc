@@ -206,6 +206,8 @@ set listchars=tab:>-
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
 "set switchbuf+=usetab,newtab
+"
+let g:vimspector_enable_mappings = 'HUMAN'
 
 " Enable modeline
 set modeline
@@ -214,4 +216,6 @@ set modelines=5
 if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
 endif
+
+set clipboard=unnamedplus
 
