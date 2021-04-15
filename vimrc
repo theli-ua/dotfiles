@@ -256,5 +256,5 @@ function! s:Hex2dec(line1, line2, arg) range
   endif
 endfunction
 
-# hover delay
+" hover delay
 set updatetime=1000
