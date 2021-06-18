@@ -1,0 +1,23 @@
+{
+  "configurations": {
+    "rust test": {
+      "adapter": "vscode-cpptools",
+      "configuration": {
+        "type":    "cppdbg",
+        "request": "launch",
+        "program": "${executable}",
+        "args": [
+            "${cmdlineargs}"
+        ],
+        "env" : {
+        },
+        "externalConsole": true,
+        "stopAtEntry": true,
+        "MIMode": "gdb",
+        "logging": {
+          "engineLogging": false
+        }
+      }
+    }
+  }
+}

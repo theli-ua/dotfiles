@@ -258,3 +258,17 @@ endfunction
 
 " hover delay
 set updatetime=1000
+
+" Function to get executable name for current test unit
+function GetRustExecutable()
+    return trim(system('cargo test --message-format=json  --no-run -- --exact 2>/dev/null | grep artifact | grep ' . expand('%:t')  . ' | jq -r .executable'))
+endfunction
+
+function VimspectorCurrentRustTest()
+    let l:test_name = expand("<cword>")
+    let l:executable = GetRustExecutable()
+
+    call vimspector#LaunchWithSettings( #{ configuration: 'rust test',
+                                \ executable: executable,
+                                \ cmdlineargs: test_name} )
+endfunction
