@@ -261,7 +261,7 @@ set updatetime=1000
 
 " Function to get executable name for current test unit
 function GetRustExecutable()
-    return trim(system('cargo test --message-format=json  --no-run -- --exact 2>/dev/null | grep artifact | grep ' . expand('%:t')  . ' | jq -r .executable'))
+    return trim(system('cargo test --message-format=json  --no-run -- --exact 2>/dev/null | grep artifact | grep ' . expand('%:t')  . ' | jq -r ".executable // empty"'))
 endfunction
 
 function VimspectorCurrentRustTest()

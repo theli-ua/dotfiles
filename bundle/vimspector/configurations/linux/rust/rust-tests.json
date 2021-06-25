@@ -1,9 +1,8 @@
 {
   "configurations": {
     "rust test": {
-      "adapter": "vscode-cpptools",
+      "adapter": "CodeLLDB",
       "configuration": {
-        "type":    "cppdbg",
         "request": "launch",
         "program": "${executable}",
         "args": [
