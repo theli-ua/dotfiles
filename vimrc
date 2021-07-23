@@ -159,7 +159,7 @@ let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_key_list_previous_completion = ['<c-k>', '<Up>']
 let g:ycm_log_level='debug'
 " Trigger semantic completion after 2 characters
-"let g:ycm_semantic_triggers = {'python':'re!\w{2}','java':'re!\w{2}','c':'re!\w{2}','rust':'re!\w{2}'}
+let g:ycm_semantic_triggers = {'python':'re!\w{2}','java':'re!\w{2}','c':'re!\w{2}','rust':'re!\w{2}'}
 function FormatAndBack()
     let save_cursor = getcurpos()
     silent YcmCompleter Format
