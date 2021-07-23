@@ -137,8 +137,10 @@ let g:DoxygenToolkit_authorName="Anton Romanov"
 let g:DoxygenToolkit_licenseTag="AS IS"
 
 " YCM
+nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
 cnoreabbrev ycm YcmCompleter
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <C-LeftMouse> <LeftMouse>:YcmCompleter GoTo<CR>
 nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 set completeopt+=popup
 "let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
