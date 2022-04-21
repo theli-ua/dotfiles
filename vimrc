@@ -43,8 +43,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'jnurmine/Zenburn'
 Plugin 'rust-lang/rust.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'ojroques/vim-oscyank'
 
 call vundle#end()            " required
+
+autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '+' | execute 'OSCYankReg +' | endif
+
 
 filetype off
 syntax on
@@ -177,6 +181,7 @@ let g:airline#extensions#tagbar#flags = 'f'
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme='zenburn'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " This allows buffers to be hidden if you've modified a buffer.
 " This is almost a must if you wish to use buffers in this way.
 set hidden
@@ -259,7 +264,7 @@ function! s:Hex2dec(line1, line2, arg) range
 endfunction
 
 " hover delay
-set updatetime=1000
+set updatetime=3000
 
 " Function to get executable name for current test unit
 function GetRustExecutable()
