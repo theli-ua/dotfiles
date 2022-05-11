@@ -44,6 +44,7 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'rust-lang/rust.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ojroques/vim-oscyank'
+Plugin 'vivien/vim-linux-coding-style'
 
 call vundle#end()            " required
 
@@ -207,6 +208,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 
 set errorformat^=%-G%f:%l:\ warning:%m
+
+let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
 
 set list
 set listchars=tab:>-
