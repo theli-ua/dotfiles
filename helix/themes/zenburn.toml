@@ -1,0 +1,76 @@
+# A unofficial port of VIM's zenburn theme: https://github.com/jnurmine/Zenburn/
+
+"ui.background" = { bg = "bg" }
+"ui.menu" = { fg = "#9f9f9f", bg = "uibg" }
+"ui.menu.selected" = { fg = "#d0d0a0", bg = "#242424", modifiers = ["bold"] }
+"ui.linenr" = { fg = "#9fafaf", bg = "#262626"}
+"ui.linenr.selected" = { modifiers = ["bold"]}
+"ui.popup" = { bg = "uibg" }
+# "ui.window" = "black"
+"ui.selection" = { bg = "#2f2f2f" }
+"comment" = { fg = "#7f9f7f" }
+"comment.block.documentation" = { fg = "black", modifiers = ["bold"] }
+"ui.statusline" = { bg = "statusbg", fg = "#ccdc90" }
+"ui.statusline.inactive" = { fg = '#2e3330', bg = '#88b090' }
+"ui.cursor" = { fg = "#000d18", bg = "#8faf9f", modifiers = ["bold"] }
+# "ui.cursor.primary" = 
+"ui.text" = { fg = "normal"}
+"operator" = { fg = "#f0efd0" , modifiers = []}
+# "ui.text.focus" = 
+"variable" = "normal"
+"variable.builtin" = {fg = "constant", modifiers = ["bold"]}
+"constant.numeric" = "numeric"
+"constant" = { fg = "constant", modifiers = ["bold"] }
+# "attributes" = 
+"type" = { fg = "#dfdfbf", modifiers = ["bold"] }
+"ui.cursor.match" = { fg = "#343434", bg = "#284f28", modifiers = ["bold"] }
+"string"  = "#cc9393"
+"variable.other.member" = "#efef8f"
+"constant.character.escape" = { fg = "#dca3a3", modifiers = ["bold"]}
+"function" = "#efef8f"
+"function.macro" = { modifiers = ["bold"] }
+# "constructor" = 
+"special" = "#cfbfaf"
+"keyword" = { fg = "#f0dfaf", modifiers = ["bold"]}
+"keyword.mut" = { fg = "#c3bf9f", modifiers = ["bold"]}
+"label" = { fg = "#dfcfaf", modifiers = ["underlined"] }
+# "namespace" = 
+"ui.help" = { fg = "white", bg = "black" }
+# "ui.virtual.whitespace" = { fg = "my_gray5" }
+"ui.virtual.ruler" = { bg = "#484848" }
+
+"punctuation.delimiter" = "#8f8f8f"
+
+# "markup.heading" = "my_yellow1"
+# "markup.list" = "my_white2"
+# "markup.bold" = { modifiers = ["bold"] }
+# "markup.italic" = {  modifiers = ["italic"] }
+# "markup.link.url" = "my_turquoise2"
+# "markup.link.text" = "my_white2"
+# "markup.quote" = "my_brown"
+# "markup.raw" = "my_green"
+
+"diff.plus" = {fg = "#709080", bg = "#313c36", modifiers = ["bold"] }
+"diff.delta" = "#333333"
+"diff.minus" = {fg = "#333333", bg = "464646"}
+
+"diagnostic" = {bg = "statusbg"}
+# "diagnostic.hint" = { fg = "todo" }
+"diagnostic.error" = { fg = "errorfg", bg = "errorbg"}
+"ui.gutter" = { bg = "statusbg" }
+"hint" = {fg = "numeric", bg = "statusbg"}
+# "debug" = "green"
+# "info" = "green"
+"warning" = "numeric"
+"error" = "errorfg"
+
+[palette]
+bg = "#3f3f3f"
+uibg = "#2c2e2e"
+constant = "#dca3a3"
+normal = "#dcdccc"
+todo = "#dfdfdf"
+errorfg = "#e37170"
+errorbg = "#3d3535"
+statusbg = "#313633"
+numeric = "#8cd0d3"
