@@ -173,6 +173,8 @@ function FormatAndBack()
     call setpos('.', save_cursor)
 endfunction
 autocmd BufWritePre *.rs call FormatAndBack()
+autocmd BufWritePre *.cc call FormatAndBack()
+autocmd BufWritePre *.h call FormatAndBack()
 " Airline
 let g:airline_powerline_fonts = 1
 " Enable the list of buffers
