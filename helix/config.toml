@@ -8,6 +8,6 @@ true-color = true
 display-messages = true
 
 [keys.normal]
-semicolon = "command_mode"
+";" = "command_mode"
 C-h = "goto_line_start"
 C-l = "goto_line_end"
