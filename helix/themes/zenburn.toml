@@ -28,11 +28,11 @@
 "variable.other.member" = "#efef8f"
 "constant.character.escape" = { fg = "#dca3a3", modifiers = ["bold"]}
 "function" = "#efef8f"
-"function.macro" = { modifiers = ["bold"] }
+"function.macro" = { fg = "#ffcfaf", modifiers = ["bold"] }
 # "constructor" = 
 "special" = "#cfbfaf"
 "keyword" = { fg = "#f0dfaf", modifiers = ["bold"]}
-"keyword.mut" = { fg = "#c3bf9f", modifiers = ["bold"]}
+"keyword.storage-class" = { fg = "#c3bf9f", modifiers = ["bold"]}
 "label" = { fg = "#dfcfaf", modifiers = ["underlined"] }
 # "namespace" = 
 "ui.help" = { fg = "white", bg = "black" }
@@ -52,7 +52,7 @@
 
 "diff.plus" = {fg = "#709080", bg = "#313c36", modifiers = ["bold"] }
 "diff.delta" = "#333333"
-"diff.minus" = {fg = "#333333", bg = "464646"}
+"diff.minus" = {fg = "#333333", bg = "#464646"}
 
 "diagnostic" = {bg = "statusbg"}
 # "diagnostic.hint" = { fg = "todo" }
