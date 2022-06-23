@@ -49,6 +49,7 @@
 # "markup.link.text" = "my_white2"
 # "markup.quote" = "my_brown"
 # "markup.raw" = "my_green"
+"ui.virtual.indent-guide" = "#4f4f4f"
 
 "diff.plus" = {fg = "#709080", bg = "#313c36", modifiers = ["bold"] }
 "diff.delta" = "#333333"

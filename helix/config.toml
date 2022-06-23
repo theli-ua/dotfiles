@@ -4,8 +4,13 @@ theme = "zenburn"
 [editor]
 line-number = "relative"
 true-color = true
+
 [editor.lsp]
 display-messages = true
+
+[editor.indent-guides]
+render = true
+character = "⋮"
 
 [keys.normal]
 ";" = "command_mode"
