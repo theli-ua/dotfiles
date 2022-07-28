@@ -10,7 +10,7 @@ display-messages = true
 
 [editor.indent-guides]
 render = true
-character = "⋮"
+character = "¦"
 
 [keys.normal]
 ";" = "command_mode"
