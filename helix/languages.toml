@@ -1,6 +1,41 @@
+[language-server.solargraph]
+config = { solargraph = { diagnostics = true, formatting = true } }
+
+[language-server.rust-analyzer.config]
+# cargo = { allFeatures = true }
+checkOnSave = { command = "clippy" }
+
+[language-server.barium]
+command = "barium"
+
 [[language]]
 name = "rust"
 auto-format = true
-[language.config]
-cargo = { allFeatures = true }
-checkOnSave = { command = "clippy" }
+
+[language.debugger]
+command = "codelldb"
+name = "codelldb"
+port-arg = "--port {}"
+transport = "tcp"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+
+[[language.debugger.templates.completion]]
+completion = "filename"
+name = "binary"
+
+[language.debugger.templates.args]
+program = "{0}"
+runInTerminal = false
+
+[[language]]
+name = "brazil-config"
+scope = "source.brazil-config"
+file-types = ["Config"]
+roots = ["Config"]
+comment-token = "#"
+language-servers = [{ name = "barium"}]
+grammar = "perl"
+
