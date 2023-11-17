@@ -2,8 +2,18 @@
 config = { solargraph = { diagnostics = true, formatting = true } }
 
 [language-server.rust-analyzer.config]
-# cargo = { allFeatures = true }
+cargo = { allFeatures = true }
 checkOnSave = { command = "clippy" }
+procMacro = { enable = true }
+
+[language-server.jdtls.config.java.format.settings]
+# url = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
+url = "https://raw.githubusercontent.com/sombrero-network/omega/8c694bed445518a3cd27a0e246dc64537042b202/code-formating/eclipse-oxige3a-Java-Code-Formatting.xml"
+
+[[language]]
+name = "java"
+indent = { tab-width = 4, unit = "    " }
+
 
 [language-server.barium]
 command = "barium"
